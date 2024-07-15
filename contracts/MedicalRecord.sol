@@ -1,7 +1,7 @@
 //SPDX-License-Identifier:MIT
 pragma solidity ^0.8.0;
 
-contract MedicalRecords {
+contract MedicalRecord {
     uint public recordId;
     mapping(uint => Record) records;
     mapping(uint => bool) public isDeleted;
@@ -17,7 +17,7 @@ contract MedicalRecords {
         string treatment;
     }
 
-    event MedicalRecords__AddRecord(
+    event MedicalRecord__AddRecord(
         uint recordId,
         uint timestamp,
         string name,
@@ -28,7 +28,7 @@ contract MedicalRecords {
         string diagnosis,
         string treatment
     );
-    event MedicalRecords__DeleteRecord(
+    event MedicalRecord__DeleteRecord(
         uint recordId,
         uint timestamp,
         string name,
@@ -61,7 +61,7 @@ contract MedicalRecords {
             _diagnosis,
             _treatment
         );
-        emit MedicalRecords__AddRecord(
+        emit MedicalRecord__AddRecord(
             recordId,
             block.timestamp,
             _name,
@@ -77,7 +77,7 @@ contract MedicalRecords {
     function deleteRecord(uint _recordId) public {
         require(!isDeleted[_recordId], "The record is already deleted");
         Record storage record = records[_recordId];
-        emit MedicalRecords__DeleteRecord(
+        emit MedicalRecord__DeleteRecord(
             record.recordId,
             block.timestamp,
             record.name,
