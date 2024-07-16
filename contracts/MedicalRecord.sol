@@ -90,7 +90,7 @@ contract MedicalRecord {
         );
         isDeleted[_recordId] = true;
     }
-
+    // getter methods
     function getRecord(
         uint _recordId
     )
@@ -119,7 +119,7 @@ contract MedicalRecord {
             record.treatment
         );
     }
-
+   
     function getRecordId() public view returns (uint) {
         return recordId;
     }
