@@ -1,0 +1,8 @@
+{
+    "buildCommand": "cd app && yarn build",
+    "outputDirectory": "app/build",
+    "installCommand": "cd app && yarn install",
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
+  }
