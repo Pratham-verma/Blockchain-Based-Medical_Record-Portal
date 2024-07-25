@@ -1,7 +1,6 @@
 {
-    "buildCommand": "cd app && yarn build",
+    "buildCommand": "cd app && yarn install && yarn build --verbose",
     "outputDirectory": "app/build",
-    "installCommand": "cd app && yarn install",
     "rewrites": [
       { "source": "/(.*)", "destination": "/index.html" }
     ]
