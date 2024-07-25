@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Provider, useDispatch } from 'react-redux';
+import store from './store/store';
+import { loadNetwork, loadProvider } from "./store/interactions";
+import { Navbar } from "./components";
+
+function AppContent() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const loadBlockchainData = async () => {
+      try {
+        const provider = loadProvider(dispatch);
+        await loadNetwork(provider, dispatch);
+        // Add any other blockchain data loading here
+      } catch (error) {
+        console.error("Error loading blockchain data:", error);
+        // Handle the error appropriately, maybe update state to show an error message
+      }
+    };
+
+    loadBlockchainData();
+  }, [dispatch]);
+
+  return (
+    <div className="App">
+      <Navbar />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <AppContent />
+    </Provider>
   );
 }
 
