@@ -1,0 +1,118 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    background-color: #2c3e50;
+    padding: 0 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav__name {
+    display: flex;
+    align-items: center;
+    color: white;
+    flex: 1;
+}
+
+.nav__name img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.nav__name h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav__networkSelector {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__networkSelector select {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    max-width: 200px;
+}
+
+.nav__networkSelector select:hover {
+    background-color: #2c3e50;
+}
+
+.nav__balance {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.nav__myBalance {
+    color: #ecf0f1;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    background-color: #34495e;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    flex-grow: 1;
+    text-align: center;
+    max-width: 200px;
+}
+
+.nav__myBalance small {
+    color: #bdc3c7;
+    font-size: 0.8rem;
+    /* display: block; */
+    margin-bottom: 0.5rem;
+}
+
+.nav__myAccount {
+    color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background-color: #3498db;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.5rem;
+    transition: background-color 0.3s ease;
+    flex-grow: 1;
+    max-width: 200px;
+}
+
+.nav__myAccount:hover {
+    background-color: #2980b9;
+}
+
+.identicon {
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+
+.nav__balance-box {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-grow: 1;
+    max-width: 200px;
+}
+
+.nav__balance-box:hover {
+    background-color: #2980b9;
+}
