@@ -1,7 +1,18 @@
 {
-    "buildCommand": "cd app && yarn install && yarn build --verbose",
-    "outputDirectory": "app/build",
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
     ]
   }
+  
