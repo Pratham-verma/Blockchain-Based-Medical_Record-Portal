@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="Navbar">
             <div className="nav__name">
                 <img src={healthReport} alt="MedLock Logo" />
-                <h2>MedLock</h2>
+                <h2>Dashboard</h2>
             </div>
             <div className="nav__networkSelector">
                 <select name="network" id="network" onChange={networkHandler}>
@@ -47,7 +47,7 @@ const Navbar = () => {
                     </p>
                 )}
                 {account ? (
-                    <a className="nav__myAccount" href="#">
+                    <button className="nav__myAccount" onClick={() => {}}>
                         <Blockies
                             seed={account}
                             size={8}
@@ -58,7 +58,7 @@ const Navbar = () => {
                             className="identicon"
                         />
                         {account.slice(0, 5) + "..." + account.slice(38, 42)}
-                    </a>
+                    </button>
                 ) : (
                     <button className="nav__balance-box" onClick={connectHandler}>
                         Connect Wallet
