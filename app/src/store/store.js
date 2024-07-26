@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { provider } from "./reducer";
+import { providerReducer, medicalReducer } from './reducer';
 
 const customSerializableCheck = {
   isSerializable: (value) => {
@@ -15,7 +15,8 @@ const customSerializableCheck = {
 
 const store = configureStore({
   reducer: {
-    provider
+    provider: providerReducer,
+    medical: medicalReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
