@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import store from './store/store';
-import { loadNetwork, loadProvider } from "./store/interactions";
-import { Navbar } from "./components";
+import { loadMedical, loadNetwork, loadProvider } from "./store/interactions";
+import { medicalLoaded } from './store/reducer'; // Import this
+import { Form, Navbar } from "./components";
+import config from "./config.json";
 
 function AppContent() {
   const dispatch = useDispatch();
@@ -11,20 +13,29 @@ function AppContent() {
     const loadBlockchainData = async () => {
       try {
         const provider = loadProvider(dispatch);
-        await loadNetwork(provider, dispatch);
-        // Add any other blockchain data loading here
+        const chainId = await loadNetwork(provider, dispatch);
+       
+        const chainConfig = config[chainId];
+        if (chainConfig && chainConfig.MedicalRecord) {
+          const medical_config = chainConfig.MedicalRecord;
+          const medical = await loadMedical(provider, medical_config.address, dispatch);
+          dispatch(medicalLoaded({ medical }));
+        } else {
+          console.error("No configuration found for chainId:", chainId);
+        }
       } catch (error) {
         console.error("Error loading blockchain data:", error);
         // Handle the error appropriately, maybe update state to show an error message
       }
     };
-
     loadBlockchainData();
   }, [dispatch]);
 
   return (
     <div className="App">
+      <h1>MedLock</h1>
       <Navbar />
+      <Form />
     </div>
   );
 }
