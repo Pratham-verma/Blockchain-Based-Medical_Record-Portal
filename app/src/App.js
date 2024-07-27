@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import store from './store/store';
 import { loadMedical, loadNetwork, loadProvider } from "./store/interactions";
-import { medicalLoaded } from './store/reducer'; // Import this
+import { medicalLoaded } from './store/reducer'; 
 import { Form, Navbar } from "./components";
 import config from "./config.json";
+
 
 function AppContent() {
   const dispatch = useDispatch();
@@ -25,7 +26,6 @@ function AppContent() {
         }
       } catch (error) {
         console.error("Error loading blockchain data:", error);
-        // Handle the error appropriately, maybe update state to show an error message
       }
     };
     loadBlockchainData();
@@ -33,7 +33,7 @@ function AppContent() {
 
   return (
     <div className="App">
-      <h1>MedLock</h1>
+      <h1>Welcome to the Decentralized Medical Records Portal</h1>
       <Navbar />
       <Form />
     </div>

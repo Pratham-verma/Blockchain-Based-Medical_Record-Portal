@@ -2,121 +2,171 @@ import React, { useState } from "react";
 import "./form.css";
 import { useDispatch, useSelector } from "react-redux";
 import { submitRecord } from "../../store/interactions";
+
 const Form = () => {
     const provider = useSelector((state) => state.provider.connection);
     const medical = useSelector((state) => state.medical.contract);
     const account = useSelector((state) => state.provider.account);
-    const [name, setName] = useState(0);
-    const [age, setAge] = useState(0);
-    const [gender, setGender] = useState(0);
-    const [bloodType, setBloodType] = useState(0);
-    const [allergies, setAllergies] = useState(0);
-    const [diagnosis, setDiagnosis] = useState(0);
-    const [treatment, setTreatment] = useState(0);
+    const [formData, setFormData] = useState({
+        name: "",
+        age: "",
+        gender: "",
+        bloodType: "",
+        allergies: "",
+        diagnosis: "",
+        treatment: ""
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const dispatch = useDispatch();
-    const submitHandler = async (e) => {
-        e.preventDefault();
-        submitRecord(
-            name,
-            age,
-            gender,
-            bloodType,
-            allergies,
-            diagnosis,
-            treatment,
-            provider,
-            medical,
-            dispatch
-        );
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
     };
 
-        return (
-            <div className="login-container">
-                {account ? (
-                    <form onSubmit={submitHandler}>
-                        <h1>Patient Detials</h1>
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        try {
+            await submitRecord(
+                formData.name,
+                formData.age,
+                formData.gender,
+                formData.bloodType,
+                formData.allergies,
+                formData.diagnosis,
+                formData.treatment,
+                provider,
+                medical,
+                dispatch
+            );
+            setFormData({
+                name: "",
+                age: "",
+                gender: "",
+                bloodType: "",
+                allergies: "",
+                diagnosis: "",
+                treatment: ""
+            });
+        } catch (error) {
+            console.error("Error submitting record:", error);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
+        <div className="login-container">
+            {account ? (
+
+                <form onSubmit={submitHandler} className="patient-form">
+                    <h1>Patient Details</h1>
+                    <div className="form-group">
                         <label htmlFor="name">Patient Name:</label>
                         <input
                             type="text"
                             id="name"
                             name="name"
                             required
-                            onChange={(e) => setName(e.target.value)}
-                            value={name === 0 ? "" : name}
-                            placeholder="Pratham verma"
+                            onChange={handleChange}
+                            value={formData.name}
+                            placeholder="John Doe"
                         />
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="age">Age:</label>
                         <input
                             type="number"
                             id="age"
                             name="age"
                             required
-                            onChange={(e) => setAge(e.target.value)}
-                            value={age === 0 ? "" : age}
-                            placeholder="21"
+                            onChange={handleChange}
+                            value={formData.age}
+                            placeholder="30"
                         />
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="gender">Gender:</label>
                         <select
                             name="gender"
                             id="gender"
                             required
-                            onChange={(e) => setGender(e.target.value)}
-                            value={gender === 0 ? "" : gender}
+                            onChange={handleChange}
+                            value={formData.gender}
                         >
-                            <option value="" disabled>
-                                Select Gender
-                            </option>
+                            <option value="" disabled>Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </select>
-                        <label htmlFor="bloodtype">Blood Type:</label>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="bloodType">Blood Type:</label>
                         <input
                             type="text"
-                            id="name"
-                            name="name"
+                            id="bloodType"
+                            name="bloodType"
                             required
-                            value={bloodType === 0 ? "" : bloodType}
-                            onChange={(e) => setBloodType(e.target.value)}
-                            placeholder="O positive"
+                            onChange={handleChange}
+                            value={formData.bloodType}
+                            placeholder="A positive"
                         />
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="allergies">Allergies:</label>
                         <input
                             type="text"
-                            id="name"
-                            name="name"
+                            id="allergies"
+                            name="allergies"
                             required
-                            value={allergies === 0 ? "" : allergies}
-                            onChange={(e) => setAllergies(e.target.value)}
-                            placeholder="Pollen allergy"
+                            onChange={handleChange}
+                            value={formData.allergies}
+                            placeholder="Penicillin, Peanuts"
                         />
-                        <label htmlFor="diagnosis">Diagnosis</label>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="diagnosis">Diagnosis:</label>
                         <input
                             type="text"
-                            id="name"
-                            name="name"
+                            id="diagnosis"
+                            name="diagnosis"
                             required
-                            value={diagnosis === 0 ? "" : diagnosis}
-                            onChange={(e) => setDiagnosis(e.target.value)}
-                            placeholder="Osteoporosis"
+                            onChange={handleChange}
+                            value={formData.diagnosis}
+                            placeholder="Hypertension"
                         />
-                        <label htmlFor="address">Treatment:</label>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="treatment">Treatment:</label>
                         <input
                             type="text"
-                            id="name"
-                            name="name"
+                            id="treatment"
+                            name="treatment"
                             required
-                            value={treatment === 0 ? "" : treatment}
-                            onChange={(e) => setTreatment(e.target.value)}
-                            placeholder="Surgery"
+                            onChange={handleChange}
+                            value={formData.treatment}
+                            placeholder="Prescribed medication"
                         />
-                        <input type="submit" value="submit" />
-                    </form>
-                ) : (
-                    <h1>Connect the account first</h1>
-                )};
+                    </div>
+                    <button type="submit" disabled={isSubmitting} className="submit-btn">
+                        {isSubmitting ? "Submitting..." : "Submit"}
+                    </button>
+                </form>
+    ) : (
+        <>
+            <div className="connect-message">
+                <h1>Please connect your wallet to access the system</h1>
+                <p>Ensure you have MetaMask or a compatible wallet installed and connected to the correct network.</p>
             </div>
-        );
-    };
-    export default Form;
+        </>
+    )
+}
+        </div >
+    );
+};
+
+export default Form;

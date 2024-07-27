@@ -1,71 +1,99 @@
 body {
-    background-color: #8d8c8c;
-    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
 }
 
-form {
-    width: 500px;
-    margin: 0 auto;
-    background-color: #fff;
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.patient-form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
     padding: 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.patient-form:hover {
+    transform: translateY(-5px);
 }
 
 h1 {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
     color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #333;
+    color: #555;
+    font-size: 14px;
 }
 
 input[type="text"],
 input[type="number"],
-select,
-textarea,
-input[type="tel"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+select {
     width: 100%;
-    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 16px;
-    color: #333;
-    background-color: #f2f2f2;
-    border: 2px solid #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-select option {
-    color: #333;
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    outline: none;
 }
 
-input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
-    background-color: #3e8e41;
+.submit-btn:hover {
+    background-color: #45a049;
 }
 
-input[type="tel"]:invalid {
-    border-color: #333;
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
-input[type="tel"]:valid {
-    border-color: #4CAF50;
+@media (max-width: 600px) {
+    .patient-form {
+        width: 90%;
+        padding: 20px;
+    }
 }
-select option { color: white; 
-background: #333;}
