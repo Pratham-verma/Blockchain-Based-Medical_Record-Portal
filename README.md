@@ -2,8 +2,6 @@
 
 MedLock is an innovative blockchain-based project designed to give patients complete control over their healthcare data. Using Solidity smart contracts, it securely stores patient information on the Ethereum blockchain, ensuring data privacy and security.
 
-## Live Demo
-
 The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
 
 ## User Interface
