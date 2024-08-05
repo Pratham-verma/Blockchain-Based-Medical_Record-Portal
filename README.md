@@ -27,8 +27,8 @@ The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
 
 ## How to Use
 
-1. Clone the repository: '' https://github.com/Pratham-verma/MedLock ''
-2. Install dependencies:  '' npm install ''
+1. Clone the repository:  https://github.com/Pratham-verma/MedLock 
+2. Install dependencies:   npm install 
 
 ## Smart Contract Configuration
 
