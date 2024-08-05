@@ -27,4 +27,18 @@ The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
 
 ## How to Use
 
-1. Clone the repository: ''https://github.com/Pratham-verma/MedLock''
+1. Clone the repository: '' https://github.com/Pratham-verma/MedLock ''
+2. Install dependencies:  '' npm install ''
+
+## Smart Contract Configuration
+
+The project uses Hardhat for Ethereum development. The `hardhat.config.js` file is set up with the following configuration:
+
+- Solidity version: 0.8.24
+- Networks:
+- Hardhat (for testing)
+- Localhost (for local development)
+
+## Contributing
+
+Contributions to MedLock are welcome! Please feel free to submit a Pull Request.
