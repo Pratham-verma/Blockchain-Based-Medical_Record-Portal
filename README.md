@@ -1,4 +1,4 @@
-# MedLock
+# <img src="app/src/assets/285-2859467_medical-record.jpeg" alt="MedLock Logo" width="30"/> MedLock 
 
 MedLock is an innovative blockchain-based project designed to give patients complete control over their healthcare data. Using Solidity smart contracts, it securely stores patient information on the Ethereum blockchain, ensuring data privacy and security.
 
