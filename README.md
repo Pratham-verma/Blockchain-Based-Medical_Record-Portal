@@ -6,6 +6,21 @@ MedLock is an innovative blockchain-based project designed to give patients comp
 
 The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
 
+## User Interface
+
+### Login Page
+![Login Page](app/src/assets/medlock.ss.png)
+The initial page where users can connect their wallet to access the system.
+
+### Patient Details Page
+![Patient Details Page](app/src/assets/2medlock.ss.png)
+Once logged in, users can view and manage patient details, including personal information and medical history.
+
+### MetaMask Integration
+![MetaMask Integration](app/src/assets/3medlock.ss.png)
+MedLock integrates with MetaMask for secure blockchain transactions and identity management.
+
+
 ## Features
 
 - Patient-centric system allowing patients to control access to their data
@@ -28,24 +43,6 @@ The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
 - Ethers.js
 - React.js (for the frontend)
 
-<<<<<<< HEAD
-## User Interface
-
-### Login Page
-![Login Page](app/src/assets/medlock.ss.png)
-The initial page where users can connect their wallet to access the system.
-
-### Patient Details Page
-![Patient Details Page](app/src/assets/2medlock.ss.png)
-Once logged in, users can view and manage patient details, including personal information and medical history.
-
-### MetaMask Integration
-![MetaMask Integration](app/src/assets/3medlock.ss.png)
-MedLock integrates with MetaMask for secure blockchain transactions and identity management.
-
-=======
-The percentages represent the language distribution in the project codebase.
->>>>>>> eafaa307d22b9250dd0b25110140c799e3a1d7d5
 ## How to Use
 
 1. Clone the repository:  https://github.com/Pratham-verma/MedLock 
