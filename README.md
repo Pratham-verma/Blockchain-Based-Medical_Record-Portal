@@ -17,14 +17,18 @@ The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
 
 ## Tech Stack and Tools
 
-- Solidity (v0.8.24)
+- Solidity (v0.8.24) - 8.4%
+- JavaScript - 79.1%
+- CSS - 9.0%
+- HTML - 3.5%
 - Hardhat
 - Ethereum blockchain
 - IPFS (InterPlanetary File System)
 - Node.js
 - Ethers.js
-- React.js
+- React.js (for the frontend)
 
+The percentages represent the language distribution in the project codebase.
 ## How to Use
 
 1. Clone the repository:  https://github.com/Pratham-verma/MedLock 
