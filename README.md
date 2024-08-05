@@ -1,13 +1,61 @@
-# Sample Hardhat Project
+# MedLock
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+MedLock is an innovative blockchain-based project designed to give patients complete control over their healthcare data. Using Solidity smart contracts, it securely stores patient information on the Ethereum blockchain, ensuring data privacy and security.
 
-Try running some of the following tasks:
+## Live Demo
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
+The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
+
+## Features
+
+- Patient-centric system allowing patients to control access to their data
+- Secure storage of healthcare records on the blockchain
+- IPFS integration for storing files like reports and X-rays
+- User classification into five categories: Owner, Hospitals, Insurance Company, Doctor, and Patient
+- Granular access control for patients to grant or revoke data access permissions
+- Consultation record viewing for both patients and authorized doctors
+
+## Tech Stack and Tools
+
+- Solidity (v0.8.24) - 8.4%
+- JavaScript - 79.1%
+- CSS - 9.0%
+- HTML - 3.5%
+- Hardhat
+- Ethereum blockchain
+- IPFS (InterPlanetary File System)
+- Node.js
+- Ethers.js
+- React.js (for the frontend)
+
+## User Interface
+
+### Login Page
+![Login Page](Blockchain_Based_Medical_record_System\app\src\assets\app/src/assets/medlock.ss.png)
+The initial page where users can connect their wallet to access the system.
+
+### Patient Details Page
+![Patient Details Page](Blockchain_Based_Medical_record_System\app\src\assets\app/src/assets/2medlock.ss.png)
+Once logged in, users can view and manage patient details, including personal information and medical history.
+
+### MetaMask Integration
+![MetaMask Integration](Blockchain_Based_Medical_record_System\app\src\assets\app/src/assets/3medlock.ss.png)
+MedLock integrates with MetaMask for secure blockchain transactions and identity management.
+
+## How to Use
+
+1. Clone the repository:  https://github.com/Pratham-verma/MedLock 
+2. Install dependencies:   npm install 
+
+## Smart Contract Configuration
+
+The project uses Hardhat for Ethereum development. The `hardhat.config.js` file is set up with the following configuration:
+
+- Solidity version: 0.8.24
+- Networks:
+- Hardhat (for testing)
+- Localhost (for local development)
+
+## Contributing
+
+Contributions to MedLock are welcome! Please feel free to submit a Pull Request.
