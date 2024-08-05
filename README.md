@@ -1,13 +1,30 @@
-# Sample Hardhat Project
+# MedLock
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+MedLock is an innovative blockchain-based project designed to give patients complete control over their healthcare data. Using Solidity smart contracts, it securely stores patient information on the Ethereum blockchain, ensuring data privacy and security.
 
-Try running some of the following tasks:
+## Live Demo
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
+The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
+
+## Features
+
+- Patient-centric system allowing patients to control access to their data
+- Secure storage of healthcare records on the blockchain
+- IPFS integration for storing files like reports and X-rays
+- User classification into five categories: Owner, Hospitals, Insurance Company, Doctor, and Patient
+- Granular access control for patients to grant or revoke data access permissions
+- Consultation record viewing for both patients and authorized doctors
+
+## Tech Stack and Tools
+
+- Solidity (v0.8.24)
+- Hardhat
+- Ethereum blockchain
+- IPFS (InterPlanetary File System)
+- Node.js
+- Web3.js (or Ethers.js)
+- React.js (assumed for the frontend)
+
+## How to Use
+
+1. Clone the repository: ''https://github.com/Pratham-verma/MedLock''
