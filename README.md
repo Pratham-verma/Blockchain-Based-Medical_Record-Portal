@@ -22,8 +22,8 @@ The project is live at: [med-lock.vercel.app](https://med-lock.vercel.app)
 - Ethereum blockchain
 - IPFS (InterPlanetary File System)
 - Node.js
-- Web3.js (or Ethers.js)
-- React.js (assumed for the frontend)
+- Ethers.js
+- React.js
 
 ## How to Use
 
