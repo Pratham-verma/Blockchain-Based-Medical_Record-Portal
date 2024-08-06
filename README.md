@@ -12,7 +12,7 @@ The initial page where users can connect their wallet to access the system.
 
 ### Patient Details Page
 ![Patient Details Page](app/src/assets/2medlock.ss.png)
-Once logged in, users can view and manage patient details, including personal information and medical history.
+Once logged in, users can view and manage patient details.
 
 ### MetaMask Integration
 ![MetaMask Integration](app/src/assets/3medlock.ss.png)
