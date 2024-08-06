@@ -23,10 +23,8 @@ MedLock integrates with MetaMask for secure blockchain transactions and identity
 
 - Patient-centric system allowing patients to control access to their data
 - Secure storage of healthcare records on the blockchain
-- IPFS integration for storing files like reports and X-rays
 - User classification into five categories: Owner, Hospitals, Insurance Company, Doctor, and Patient
 - Granular access control for patients to grant or revoke data access permissions
-- Consultation record viewing for both patients and authorized doctors
 
 ## Tech Stack and Tools
 
