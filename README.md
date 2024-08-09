@@ -34,7 +34,6 @@ MedLock integrates with MetaMask for secure blockchain transactions and identity
 - HTML - 3.5%
 - Hardhat
 - Ethereum blockchain
-- IPFS (InterPlanetary File System)
 - Node.js
 - Ethers.js
 - React.js (for the frontend)
