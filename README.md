@@ -58,3 +58,5 @@ The project uses Hardhat for Ethereum development. The `hardhat.config.js` file 
 ## Contributing
 
 Contributions to MedLock are welcome! Please feel free to submit a Pull Request.
+
+## thank you for watching
