@@ -12,7 +12,7 @@ The initial page where users can connect their wallet to access the system.
 
 ### Patient Details Page
 ![Patient Details Page](app/src/assets/2medlock.ss.png)
-Once logged in, users can view and manage patient details, including personal information and medical history.
+Once logged in, users can view and manage patient details.
 
 ### MetaMask Integration
 ![MetaMask Integration](app/src/assets/3medlock.ss.png)
@@ -23,10 +23,8 @@ MedLock integrates with MetaMask for secure blockchain transactions and identity
 
 - Patient-centric system allowing patients to control access to their data
 - Secure storage of healthcare records on the blockchain
-- IPFS integration for storing files like reports and X-rays
 - User classification into five categories: Owner, Hospitals, Insurance Company, Doctor, and Patient
 - Granular access control for patients to grant or revoke data access permissions
-- Consultation record viewing for both patients and authorized doctors
 
 ## Tech Stack and Tools
 
@@ -36,7 +34,6 @@ MedLock integrates with MetaMask for secure blockchain transactions and identity
 - HTML - 3.5%
 - Hardhat
 - Ethereum blockchain
-- IPFS (InterPlanetary File System)
 - Node.js
 - Ethers.js
 - React.js (for the frontend)
